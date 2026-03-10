@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="signin-form">
+            <h2>Form Sign In</h2>
+            <hr>
+            <h5>Username</h5>
+            <input type="text" id="username" placeholder="Masukkan Username">
+            <h5>Password</h5>
+            <input type="text" id="password" placeholder="Masukkan Password">
+            <hr>
+            <button id="signin">Sign In</button>
+            <br>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () { /*akan jalan kalo terjadi event*/
+            let signIn = document.getElementById("signin");
+
+            signIn.addEventListener("click", function () { /*kode jalan setelah html dimuat*/
+                let usn = document.getElementById("username").value.trim();
+                let pass = document.getElementById("password").value.trim();
+                let position = document.getElementById("password");
+                let errorBefore = document.getElementById("msgError");
+                if (errorBefore) {
+                    errorBefore.remove();
+                }
+
+                if (usn == "" || pass == "") {
+                    let msgError = document.createElement("p");
+                    msgError.id = "msgError";
+                    msgError.style.color = "red";
+                    msgError.style.fontSize = "12px";
+                    msgError.style.marginLeft = "5px";
+                    msgError.style.textAlign = "left";
+                    msgError.textContent = "Username atau Password Tidak Boleh Kosong";
+                    position.after(msgError);
+                } else {
+                    window.open("https://www.instagram.com/yohanagriseldaa?igsh=Y2dzOWc1b2E3aW5t");
+                }
+            })
+        } )
+        </script>
+    </body>
+</html>
