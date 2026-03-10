@@ -43,6 +43,24 @@
                     msgError.style.textAlign = "left";
                     msgError.textContent = "Username atau Password Tidak Boleh Kosong";
                     position.after(msgError);
+                } else if (pass.length < 7) {
+                    let msgError = document.createElement("p");
+                    msgError.id = "msgError";
+                    msgError.style.color = "red";
+                    msgError.style.fontSize = "12px";
+                    msgError.style.marginLeft = "5px";
+                    msgError.style.textAlign = "left";
+                    msgError.textContent = "Password minimal harus 7 karakter";
+                    position.after(msgError);
+                } else if (pass.length > 10) {
+                    let msgError = document.createElement("p");
+                    msgError.id = "msgError";
+                    msgError.style.color = "red";
+                    msgError.style.fontSize = "12px";
+                    msgError.style.marginLeft = "5px";
+                    msgError.style.textAlign = "left";
+                    msgError.textContent = "Password maksimal harus 10 karakter";
+                    position.after(msgError);
                 } else {
                     window.open("https://www.instagram.com/yohanagriseldaa?igsh=Y2dzOWc1b2E3aW5t");
                 }
